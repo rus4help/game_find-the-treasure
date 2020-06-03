@@ -49,6 +49,7 @@
         var width = 400;
         var height = 400;
         var clicks = 0;
+        var clicksTheEnd = 25;
 
         var target = {
             x: getRandomNumber(width),
@@ -59,6 +60,7 @@
 
         $("#map").click(function (event) {
             clicks++;
+            clicksTheEnd--;
             // Получаем расстояние от места клика до клада
             var distance = getDistance(event, target);
             // Преобразуем расстояние в подсказку
@@ -69,6 +71,10 @@
             if (distance < 8) {
                 alert("Клад найден! Сделано кликов: " + clicks);
             }
+            if(clicksTheEnd === 0) {
+                alert("Вы проиграли... конец игры.");
+                location.reload();
+            };
         });
 
     </script>
