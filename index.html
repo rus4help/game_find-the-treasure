@@ -54,7 +54,17 @@
         // console.log(target.x + " " + target.y);
 
         $("#map").click(function (event) {
-
+            clicks++;
+            // Получаем расстояние от места клика до клада
+            var distance = getDistance(event, target);
+            // Преобразуем расстояние в подсказку
+            var distanceHint = getDistanceHint(distance);
+            // Записываем в элемент #distance новую подсказку
+            $("#distance").text(distanceHint);
+            // Если клик был достаточно близко, поздравляем с победой
+            if (distance < 8) {
+                alert("Клад найден! Сделано кликов: " + clicks);
+            }
         });
 
     </script>
