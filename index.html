@@ -49,7 +49,7 @@
         var width = 400;
         var height = 400;
         var clicks = 0;
-        var clicksTheEnd = 25;
+        var clicksTheEnd = 30;
 
         var target = {
             x: getRandomNumber(width),
@@ -69,7 +69,8 @@
             $("#distance").text(distanceHint);
             // Если клик был достаточно близко, поздравляем с победой
             if (distance < 8) {
-                alert("Клад найден! Сделано кликов: " + clicks);
+                alert("Клад найден! Сделано кликов: " + clicks + ". Осталось попыток: " + clicksTheEnd);
+                location.reload();
             }
             if(clicksTheEnd === 0) {
                 alert("Вы проиграли... конец игры.");
