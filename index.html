@@ -24,6 +24,24 @@
             return Math.sqrt((diffX * diffX) + (diffY * diffY));
         };
 
+        var getDistanceHint = function (distance) {
+            if (distance < 10) {
+                return "Обожжешься!";
+            } else if (distance < 20) {
+                return "Очень горячо";
+            } else if (distance < 40) {
+                return "Горячо";
+            } else if (distance < 80) {
+                return "Тепло";
+            } else if (distance < 160) {
+                return "Холодно";
+            } else if (distance < 320) {
+                return "Очень холодно";
+            } else {
+                return "Замерзнешь!";
+            }
+        };
+
         var width = 400;
         var height = 400;
 
